@@ -1,4 +1,6 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { defineNuxtConfig } from 'nuxt/config'
+
 
 export default defineNuxtConfig({
   build: {
@@ -10,20 +12,24 @@ export default defineNuxtConfig({
   ],
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-modules: [
-  '@nuxt/eslint',
-  '@nuxt/fonts',
-  '@nuxt/icon',
-  '@nuxt/image',
-  '@nuxt/scripts',
-  (_options, nuxt) => {
-    nuxt.hooks.hook('vite:extendConfig', (config) => {
-      // @ts-expect-error
-      config.plugins.push(vuetify({ autoImport: true }))
-    })
-  }
-  
+
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/scripts',
+    ['nuxt-vue3-google-signin', {
+      clientId: '838971008085-jb4khkfqegsvfq5r0st02hr1gake4smj.apps.googleusercontent.com',
+    }],
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
+    }
   ],
+
   vite: {
     vue: {
       template: {
@@ -31,5 +37,4 @@ modules: [
       },
     },
   },
-  
 })

@@ -31,7 +31,7 @@ const links = ref([
   },
   {
     title: "Campaigns",
-    link: "/service",
+    link: "/",
   },
   {
     title: "Memorials",

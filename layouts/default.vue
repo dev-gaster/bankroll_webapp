@@ -11,21 +11,23 @@
         
       </template>
       <v-spacer></v-spacer>
-      <v-btn variant="plain" class="text-none" to="/campaign">Campaign</v-btn>
+      <v-btn variant="plain" class="text-none" to="/campaigns">Campaign</v-btn>
       <v-btn variant="plain" class="text-none" to="/features">Features</v-btn>
       <v-btn variant="plain" class="text-none" to="/contact">Contact Us</v-btn>
       <v-spacer></v-spacer>
-      <v-btn variant="flat" class="text-none" color="green" >Login</v-btn>
-      <v-btn  variant="outlined" class="text-none ml-2" color="green">Sign Up</v-btn>
-    </v-app-bar>
+      <Signin/>
+      </v-app-bar>
     <v-main>
       <NuxtPage />
     </v-main>
-    <v-footer color="black">
+    <v-footer v-if="!route.path.includes('campaigns')"  color="black">
       <Footer/>
     </v-footer>
   </v-app>
 </template>
+<script setup lang="ts">
+const route = useRoute();
+</script>
 <style lang="css">
 .v-app-bar {
   padding: 0 40px !important;
