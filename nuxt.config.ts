@@ -1,15 +1,21 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
-  build: {
-    transpile: ['vuetify'],
-  },
+
   css: [
     '~/assets/styles/style.css'
   ],
   compatibilityDate: '2025-05-15',
-  devtools: { enabled: process.env.NODE_ENV=='development' },
-
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
+  build: {
+    transpile: ['vuetify'],
+  },
+  app: {
+    head: {
+      title: "Bankroll: WhatsApp Style Fundraising Platform",
+      titleTemplate: "%$ | Bankroll.cash"
+    }
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
