@@ -1,17 +1,14 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { defineNuxtConfig } from 'nuxt/config'
-
-
 export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
   css: [
-    'vuetify/styles',
     '~/assets/styles/style.css'
   ],
   compatibilityDate: '2025-05-15',
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV=='development' },
 
   modules: [
     '@nuxt/eslint',
@@ -24,7 +21,7 @@ export default defineNuxtConfig({
     }],
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
+        // @ts-expect-error: vite config type does not include plugins property, but it exists at runtime
         config.plugins.push(vuetify({ autoImport: true }))
       })
     }

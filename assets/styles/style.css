@@ -16,3 +16,15 @@
     font-size: clamp(16px, 3vw, 18px);
     color: #666;
 }
+.v-app-bar {
+    padding: 0 100px !important;
+    background-color: #ffffff !important; }
+
+@media (min-width: 1280px) {
+    .v-app-bar {
+        padding: 0 150px!important;
+    }
+    .v-container{
+        padding: 0 100px!important;
+    }
+}
