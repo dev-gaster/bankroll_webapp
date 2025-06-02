@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Bankroll: WhatsApp Style Fundraising Platform",
-      titleTemplate: "%$ | Bankroll.cash"
+      titleTemplate: "%s | Bankroll.cash"
     }
   },
   modules: [
