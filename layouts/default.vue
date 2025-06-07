@@ -1,4 +1,3 @@
-<!-- ~/layouts/default.vue -->
 <template>
   <v-app>
     <v-app-bar app class="v-app-bar" v-if="!$vuetify.display.smAndDown" color="white" flat>
@@ -22,7 +21,7 @@
     <v-main>
       <NuxtPage />
     </v-main>
-    <v-footer v-if="!route.path.includes('campaigns')" color="#00031C">
+    <v-footer v-if="!route.path.includes('campaigns') && !route.path.includes('login') && !$route.path.includes('signup')" color="#00031C">
       <Footer />
     </v-footer>
   </v-app>

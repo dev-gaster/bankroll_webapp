@@ -22,7 +22,7 @@
 
 @media (min-width: 1280px) {
     .v-app-bar {
-        padding: 0 150px!important;
+        padding: 0 50px!important;
     }
     .v-container{
         padding: 0 100px!important;

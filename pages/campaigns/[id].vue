@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-navigation-drawer :mobile="$vuetify.display.mobile" color="transparent" class="pa-4" width="400" floating location="right">
-            <v-card color="#E6F8E5" variant="flat" class="py-8 px-4" rounded="xl">
+            <v-card color="primary" variant="tonal" class="py-8 px-4" rounded="xl">
                 <v-row >
                     <v-col cols="8" class=" mb-6" >
                         <h3>Raised: UGX. 12,500,000</h3>
@@ -16,20 +16,17 @@
               color="success"
               bg-color="#FFFFFF"
             />
-                    </v-col>
-             
+                    </v-col>   
             </v-row>
-
             <v-col class="mt-2">
                 <v-row class="mb-2">
-                    <v-btn color="primary" elevation="0" block>Donations</v-btn>
+                    <v-btn color="primary" variant="flat" rounded block>Donate</v-btn>
                 </v-row>
                 <v-row class="mb-2">
                     <v-btn
-                        color="white"
-                        class="text-success"
-                        elevation="0"
-                        
+                        color="primary"
+                        rounded
+                        variant="outlined"
                         block
                     >
                         Join
