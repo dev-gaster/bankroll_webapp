@@ -28,3 +28,9 @@
         padding: 0 100px!important;
     }
 }
+.flex-1{
+    flex: 1
+}
+.v-btn{
+    text-transform: none!important;
+}
