@@ -56,20 +56,9 @@
           </v-card-text>
         </v-card>
       </v-tabs-window-item>
-      <v-tabs-window-item value="tab-2">
-        <v-card class="pa-4">
-          <v-list lines="two" density="comfortable">
-            <v-list-item v-for="(donation, index) in donations" :key="index">
-              <template #prepend>
-                <v-avatar color="primary" size="36">
-                  <v-icon icon="mdi-cash" />
-                </v-avatar>
-              </template>
-              <v-list-item-title>{{ donation.name }}</v-list-item-title>
-              <v-list-item-subtitle>UGX. {{ donation.amount.toLocaleString() }}</v-list-item-subtitle>
-            </v-list-item>
-          </v-list>
-        </v-card>
+      <v-tabs-window-item value="tab-2" to="[id]/donations">
+        
+        
       </v-tabs-window-item>
 
       <v-tabs-window-item value="tab-3">

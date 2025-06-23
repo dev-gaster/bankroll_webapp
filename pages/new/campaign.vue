@@ -3,8 +3,7 @@
    
           <v-col cols="12">
 
-        <!-- <v-card class="pa-6" width="100%" rounded="xl" style="box-shadow: 0 12px 24px rgba(52, 29, 116, 0.2);"> -->
-      <v-card class="pa-8" width="100%" elevation="12" rounded="xl">
+        <v-card class="pa-8" width="100%" elevation="12" rounded="xl">
 
           <h3 class="subheading mb-4">Step {{ step }} of 3</h3>
 
@@ -55,7 +54,7 @@
             <FileUpload v-model="form.coverImage" label="Campaign Cover Image" />
           </v-form>
 
-          Step 2
+          <!-- Step 2 -->
           <v-form v-if="step === 2" ref="formStep2" v-model="validStep2">
             <v-text-field
               v-model="form.goalAmount"
