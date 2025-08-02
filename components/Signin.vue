@@ -23,7 +23,9 @@
           </p>
 
           <v-text-field label="Email address" hide-details="auto" />
-          <v-btn block class="mt-4" variant="flat" height="45" color="primary">Continue</v-btn>
+          <v-btn block class="mt-4" variant="flat" height="45" color="primary"
+            >Continue</v-btn
+          >
           <div class="my-3">
             <v-divider>Or continue with</v-divider>
           </div>
