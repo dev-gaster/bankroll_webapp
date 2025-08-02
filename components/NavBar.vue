@@ -21,7 +21,7 @@ components/NavBar.vue
       Features
     </v-btn>
 
-    <Signin/>
+ 
   </v-bottom-navigation>
 </template>
 

@@ -1,13 +1,13 @@
-// import this after install `@mdi/font` package
-import 'vuetify/styles'
-import '@mdi/font/css/materialdesignicons.css'
-import colors from 'vuetify/lib/util/colors.js'
-
-
 import { createVuetify } from 'vuetify'
+import { VFileUpload } from 'vuetify/labs/VFileUpload'
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/styles'
 
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
+    components: {
+      VFileUpload, 
+    },
     theme: {
       themes: {
         light: {
@@ -21,5 +21,6 @@ export default defineNuxtPlugin((app) => {
       }
     }
   })
+
   app.vueApp.use(vuetify)
 })
