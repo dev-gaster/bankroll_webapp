@@ -1,8 +1,9 @@
 <template>
-  <GoogleSignInButton 
-    @success="handleLoginSuccess"
-    @error="handleLoginError"
-  ></GoogleSignInButton>
+  <GoogleSignInButton :buttonConfig="{
+    size: 'large',
+    theme: 'outlined',
+    width: '500',
+  }" @success="handleLoginSuccess" @error="handleLoginError" />
 </template>
 
 <script setup lang="ts">

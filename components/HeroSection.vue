@@ -13,7 +13,7 @@
               <span class="main-desc">Create private funding groups with family and friends. Share updates,
                 receive pledges, and track progress just like your favorite messaging
                 app.</span>
-              <br />Bring people together in a <br />
+              Bring people together in a
               <span class="text-yellow font-weight-bold">MORE ORGANIZED WAY</span>
             </p>
             <v-row>

@@ -28,3 +28,13 @@
         padding: 0 100px!important;
     }
 }
+
+@media (min-width:1000px) {
+    .v-app-bar {
+        padding: 0 25px !important;
+    }
+
+    .v-container {
+        padding: 0 12.5px !important;
+    }
+}
