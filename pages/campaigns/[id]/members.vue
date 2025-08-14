@@ -1,20 +1,19 @@
 <template>
-   <v-card class="pa-4">
-          <v-list lines="two" density="comfortable">
-            <v-list-item v-for="(member, index) in members" :key="index">
-              <template #prepend>
-                <v-avatar color="primary" size="36">
-                  <v-icon icon="mdi-account" />
-                </v-avatar>
-              </template>
-              <v-list-item-title>{{ member.name }}</v-list-item-title>
-              <v-list-item-subtitle>{{ member.role }}</v-list-item-subtitle>
-            </v-list-item>
-          </v-list>
-        </v-card>
+  <v-card class="pa-4">
+    <v-list lines="two" density="comfortable">
+      <v-list-item v-for="(member, index) in members" :key="index">
+        <template #prepend>
+          <v-avatar color="primary" size="36">
+            <v-icon icon="mdi-account" />
+          </v-avatar>
+        </template>
+        <v-list-item-title>{{ member.name }}</v-list-item-title>
+        <v-list-item-subtitle>{{ member.role }}</v-list-item-subtitle>
+      </v-list-item>
+    </v-list>
+  </v-card>
 </template>
 <script setup lang="ts">
-const tab = ref(null);
 const members = ref([
   { name: "John Doe", role: "Organizer" },
   { name: "Jane Smith", role: "Admin" },
