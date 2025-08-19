@@ -1,0 +1,49 @@
+
+.heading1{
+    font-weight: 900; 
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.2; 
+    color: #ffffff;
+}
+.heading2{
+     
+    font-size: clamp(32px, 3vw, 50px);
+    font-weight: bold; 
+    line-height: 1.2; 
+    color: #000000;
+}
+.subheading{
+    font-size: 1.2rem; 
+    font-size: clamp(16px, 3vw, 18px);
+    color: #666;
+}
+.v-app-bar {
+    padding: 0 100px !important;
+    /* background-color: #ffffff !important; */
+    backdrop-filter: blur(10px) !important;
+ }
+
+@media (min-width: 1280px) {
+    .v-app-bar {
+        padding: 0 50px!important;
+    }
+    .v-container{
+        padding: 0 100px!important;
+    }
+}
+
+@media (min-width:1000px) {
+    .v-app-bar {
+        padding: 0 25px !important;
+    }
+
+    .v-container {
+        padding: 0 12.5px !important;
+    }
+}
+.flex-1{
+    flex: 1
+}
+.v-btn{
+    text-transform: none!important;
+}
