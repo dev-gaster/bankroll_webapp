@@ -1,28 +1,36 @@
 <template>
   <v-app>
-    <v-app-bar app class="v-app-bar" v-if="!$vuetify.display.smAndDown" color="white" flat>
+    <v-app-bar v-if="!$vuetify.display.smAndDown" color="transparent" flat>
       <template #prepend>
         <v-toolbar color="transparent" flat>
           <NuxtLink to="/">
             <v-img src="/bankroll-logo.png" alt="Company Logo" :width="$vuetify.display.mobile ? '100' : '150'" cover />
           </NuxtLink>
         </v-toolbar>
-
       </template>
-      <v-spacer></v-spacer>
-      <v-btn variant="plain" class="text-none " to="/campaigns"> <a class="subheading">Campaign</a></v-btn>
-      <v-btn variant="plain" class="text-none" to="/features"> <a class="subheading">Features</a></v-btn>
-      <v-btn variant="plain" class="text-none" to="/contact"> <a class="subheading">Contact Us</a></v-btn>
-      <v-spacer></v-spacer>
-
-      <Signin />
+      <v-spacer />
+      <v-btn variant="text" class="font-weight-medium" to="/campaigns"> Campaign</v-btn>
+      <v-btn variant="text" class="font-weight-medium" to="/features"> Features</v-btn>
+      <v-btn variant="text" class="font-weight-medium" to="/contact"> Contact Us</v-btn>
+      <v-spacer />
+      <v-btn height="40" rounded class="font-weight-medium d-none d-md-flex" style="font-size: 16px" color="primary"
+        variant="flat" depressed target="blank" href="https://forms.gle/6nPDEWTNcaVwnQLY6">
+        Get the App
+      </v-btn>
+      <v-btn v-if="$vuetify.display.mobile" class="d-flex d-sm-none" target="blank"
+        href="https://forms.gle/6nPDEWTNcaVwnQLY6" icon outlined height="35" width="35"
+        color="primary"><v-icon>mdi-download</v-icon></v-btn>
     </v-app-bar>
     <NavBar v-if="$vuetify.display.smAndDown" />
     <v-main>
-      <NuxtPage />
+      <slot />
     </v-main>
-    <v-footer v-if="!route.path.includes('campaigns') && !route.path.includes('login') && !$route.path.includes('signup')" color="#00031C">
-      <Footer />
+    <v-footer v-if="
+      !route.path.includes('campaigns') &&
+      !route.path.includes('login') &&
+      !$route.path.includes('signup')
+    " color="#00031C">
+      <SiteFooter />
     </v-footer>
   </v-app>
 </template>

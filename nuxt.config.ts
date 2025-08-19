@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Bankroll: WhatsApp Style Fundraising Platform",
+      title: "Bankroll: 1# Digital platform that enables you to support (a person, organization, or project) financially.",
       titleTemplate: "%s | Bankroll.cash"
     }
   },
@@ -32,6 +32,13 @@ export default defineNuxtConfig({
       })
     }
   ],
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.API_URL,
+      // authTokenName: process.env.AUTH_TOKEN_NAME,
+      // refreshTokenName: process.env.REFRESH_TOKEN_NAME,
+    },
+  },
 
   vite: {
     vue: {

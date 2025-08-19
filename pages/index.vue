@@ -1,34 +1,34 @@
 <template>
-    <HeroSection />
-    <Features/>
+  <div>
+    <v-sheet min-height="70vh">
+      <v-container
+        class="fill-height d-flex mt-5 flex-column align-center justify-items-center"
+      >
+        <div>
+          <v-img src="/icon-light.png" width="100" />
+        </div>
+        <div class="text-center hero-text-wrapper">
+          <h1>WhatsApp group Alternative</h1>
+          <div style="text-align: center; font-size: 1.5rem">
+            Bankroll is the <b>#1 Platform</b> that empowers you to Organize campaigns and
+            Support (a person, Organization or Project) financially
+          </div>
+        </div>
+      </v-container>
+    </v-sheet>
+    <!-- <HeroSection /> -->
+    <Features />
     <CampaignCategories />
     <HowItWorks />
-    <CTASection/>
-
-  <!-- <TwoHeaders
-    title="Recommended Campaigns"
-    link="/"
-    />
-     <v-container class="mb-4">
-    <v-row>
-      <v-col
-        v-for="n in 3"
-        :key="n"
-        cols="12"
-        sm="6"
-        md="6"
-        lg="4"
-        class="mb-4"
-      >
-        <Campaigns
-          title="Help Sarah Fight Leukemia"
-          description="Sarah is a bright 9-year-old battling leukemia. Help her family afford chemotherapy and travel expenses."
-          image="/girl.jpeg"
-          goal="UGX 20,000,000"
-          organizer="John Doe"
-          :showEnding="true"
-        />
-      </v-col>
-    </v-row>
-  </v-container> -->
+    <CTASection />
+  </div>
 </template>
+<style lang="scss" scoped>
+.hero-text-wrapper {
+  width: 600px !important;
+
+  @media (max-width: 600px) {
+    width: auto;
+  }
+}
+</style>

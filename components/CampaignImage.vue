@@ -1,42 +1,32 @@
 <template>
-  <v-card class="overflow-hidden" height="400px" variant="flat" rounded="xl" >
+  <v-card class="overflow-hidden" height="400px" variant="flat" rounded="xl">
     <v-img :src="image" cover height="400px">
       <div class="gradient-overlay"></div>
 
       <div class="top-overlay pa-6 pt-4">
         <v-row no-gutters align="center" justify="space-between">
-          <v-col class="flex-grow-0">
-            <Timeline />
-          </v-col>
-          <v-col class="flex-grow-0" v-if="goal">
-  <CircularProgress
-    :current="current"
-    :total="total"
-    :size="50"
-    :width="6"
-    color="success"
-    bg-color="#FBFFFA"
-  />
-</v-col>
+          <!-- shown only if the campaign is not null -->
 
+          <v-col class="flex-grow-0" v-if="goal">
+            <CircularProgress :current="current" :total="total" :size="50" :width="6" color="success"
+              bg-color="#FBFFFA" />
+          </v-col>
         </v-row>
       </div>
 
       <div class="text-overlay">
         <h3 class="text-white responsive-heading mb-1">{{ title }}</h3>
 
-
         <p class="text-white mb-2 responsive-paragraph">{{ description }}</p>
 
         <v-row class="px-0" no-gutters>
-  <v-col cols="6" v-if="organizer">
-    <span class="text-white" style="font-size: 0.9rem;">Organized by: {{ organizer }}</span>
-  </v-col>
-  <v-col cols="6" class="text-right" v-if="goal">
-    <span style="color:#49AA18; font-size: 0.9rem; font-weight: bold;">Goal: {{ goal }}</span>
-  </v-col>
-</v-row>
-
+          <v-col cols="6" v-if="organizer">
+            <span class="text-white" style="font-size: 0.9rem">Organized by: {{ organizer }}</span>
+          </v-col>
+          <v-col cols="6" class="text-right" v-if="goal">
+            <span style="color: #49aa18; font-size: 0.9rem; font-weight: bold">Goal: {{ goal }}</span>
+          </v-col>
+        </v-row>
       </div>
     </v-img>
   </v-card>
@@ -51,17 +41,17 @@ defineProps({
   organizer: String,
   current: {
     type: Number,
-    default: 0
+    default: 0,
   },
   total: {
     type: Number,
-    default: 100
+    default: 100,
   },
   showEnding: {
     type: Boolean,
-    default: true
-  }
-})
+    default: true,
+  },
+});
 </script>
 
 <style scoped>
