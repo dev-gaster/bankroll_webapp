@@ -1,13 +1,25 @@
 <template>
   <div>
     <v-navigation-drawer v-if="campaign" location="right" width="350" class="pa-4" floating>
-      <v-card min-height="300" rounded="xl" variant="tonal" color="secondary" class="pa-4">
-        <h1>Campaign</h1>
+      <v-card min-height="300" rounded="xl" class="pa-4" style="
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+        ">
+        <h1>{{ formatCurrency(campaign.goal_amount) }}</h1>
+        <div class="d-flex">
+          <b>Raised:</b>
+          <div>{{ formatCurrency("200000") }}</div>
+        </div>
+        <div class="d-flex">
+          <v-btn variant="flat" color="primary" class="flex-1">Donate</v-btn>
+          <v-btn variant="outlined" color="primary" class="ml-2 flex-1">Share</v-btn>
+        </div>
       </v-card>
     </v-navigation-drawer>
+    <div v-if="pending" class="text-center">
+      <div>loading</div>
+    </div>
     <v-container v-if="campaign" class="pa-5">
-      <CampaignImage :image="campaign?.image ?? '/girl.jpeg'" :title="campaign?.title ?? 'Campaign does not exist'"
-        :description="campaign?.author?.name ?? 'Campaign Not Found'" />
+      <CampaignImage :campaign="campaign" />
       <div class="tab-sticky">
         <v-card class="pa-4 mb-4 rounded-xl d-block d-md-none" color="primary" variant="tonal">
           <div class="d-flex align-center justify-space-between mb-4">
@@ -39,7 +51,7 @@
         <h2>Campaign Details</h2>
         <br />
         <div>
-          <p>{{ campaign?.description ?? "Campaign does not exist" }}</p>
+          <!-- <p>{{ data?.description ?? "Campaign does not exist" }}</p> -->
           <v-divider class="my-2" />
 
           <br />
@@ -83,69 +95,86 @@
           </v-row>
 
           <v-divider class="my-2" />
-
-          <TwoHeaders title="Most Searched" link="/" />
-          <v-row>
-            <v-col v-for="n in 2" :key="n" cols="12" sm="6" md="6" lg="6" class="mb-4">
-              <Campaigns title="Help Sarah Fight Leukemia"
-                description="Sarah is a bright 9-year-old battling leukemia. Help her family afford chemotherapy and travel expenses."
-                image="/girl.jpeg" goal="UGX 20,000,000" organizer="John Doe" :show-ending="true" :current="70"
-                :total="100" />
-            </v-col>
-          </v-row>
         </div>
       </div>
     </v-container>
     <v-container v-else>
       <v-card class="mx-auto pa-4 d-flex flex-column align-center" flat max-width="700">
         <v-avatar size="100" color="grey" variant="tonal" />
-
+        <h1>{{ error?.message }}</h1>
         <h1 class="mt-5">Campaign with ID {{ $route.params.id }} not found</h1>
-        <div class="mt-4">
+        <div class="mt-4 d-flex">
           <v-btn color="primary" to="/" variant="flat" rounded>Get out of Here</v-btn>
+          <v-btn color="primary" variant="text" rounded @click="refresh">
+            <v-icon location="left" class="mr-3" left>mdi-reload</v-icon> Retry</v-btn>
         </div>
       </v-card>
     </v-container>
   </div>
 </template>
 
-<script>
-export default {
-  async asyncData({ params }) {
-    // const
-    const config = useRuntimeConfig();
-    const apiUrl = config.public.apiUrl;
-    const { data } = await $fetch(`${apiUrl}/campaigns/${params.id}`);
-    return {
-      campaign: data,
-    };
+<script setup lang="ts">
+const config = useRuntimeConfig();
+const route = useRoute();
+const { data: campaign, pending, error, refresh } = await useAsyncData<CampaignType>(
+  `campaign-${route.params.id}`,
+  async () => {
+    try {
+      const response = await $fetch<CampaignType>(
+        `${config.public.apiUrl}/campaigns/${route.params.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${config.public.apiToken}`,
+            "Content-Type": "application/json",
+          },
+          // Optional: Add timeout and retry logic
+          timeout: 10000,
+          retry: 2,
+          retryDelay: 1000,
+        }
+      );
+      return response;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (fetchError: any) {
+      console.error("Fetch error:", fetchError);
+      throw createError({
+        statusCode: fetchError.statusCode || 500,
+        statusMessage: fetchError.statusMessage || "Failed to fetch campaign data",
+      });
+    }
   },
-  head: () => ({
-    title: this.campaign?.title ?? null,
-    meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: this.campaign?.description ?? null,
-      },
-      {
-        hid: "og:title",
-        name: "og:title",
-        content: this.campaign?.title ?? null,
-      },
-      {
-        hid: "og:image",
-        name: "og:image",
-        content: this.campaign.image ?? null,
-      },
-      {
-        hid: "og:description",
-        name: "og:description",
-        content: this.campaign?.description ?? null,
-      },
-    ],
-  }),
+  {
+    server: true,
+    lazy: false, // Set to true if you want to defer loading
+    default: () => null,
+    transform: (data) => {
+      // You can transform the data here if needed
+      return data;
+    },
+    // Optional: Cache settings
+  }
+);
+// const calculateProgress = (campaign: Campaign) => {
+//   const goal = parseFloat(campaign.goal_amount)
+//   const current = parseFloat(campaign.current_amount)
+//   if (goal === 0) return 0
+//   return Math.min(100, Math.round((current / goal) * 100))
+// }
+
+const formatCurrency = (amount: string) => {
+  return parseFloat(amount).toLocaleString("en-UG", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 };
+
+useSeoMeta({
+  title: campaign.value?.title ?? null,
+  description: campaign.value?.description ?? null,
+  ogTitle: campaign.value?.title ?? null,
+  ogDescription: campaign.value?.description ?? null,
+  ogImage: campaign.value?.image ?? null,
+});
 </script>
 
 <style>
