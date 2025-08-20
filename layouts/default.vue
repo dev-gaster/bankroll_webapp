@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar v-if="!$vuetify.display.smAndDown" color="transparent" flat>
+    <v-app-bar color="transparent" flat>
       <template #prepend>
         <v-toolbar color="transparent" flat>
           <NuxtLink to="/">
@@ -9,9 +9,11 @@
         </v-toolbar>
       </template>
       <v-spacer />
-      <v-btn variant="text" class="font-weight-medium" to="/campaigns"> Campaign</v-btn>
-      <v-btn variant="text" class="font-weight-medium" to="/features"> Features</v-btn>
-      <v-btn variant="text" class="font-weight-medium" to="/contact"> Contact Us</v-btn>
+      <div class="d-none d-sm-flex">
+        <v-btn variant="text" class="font-weight-medium" to="/campaigns"> Campaign</v-btn>
+        <v-btn variant="text" class="font-weight-medium" to="/features"> Features</v-btn>
+        <v-btn variant="text" class="font-weight-medium" to="/contact"> Contact Us</v-btn>
+      </div>
       <v-spacer />
       <v-btn height="40" rounded class="font-weight-medium d-none d-md-flex" style="font-size: 16px" color="primary"
         variant="flat" depressed target="blank" href="https://forms.gle/6nPDEWTNcaVwnQLY6">
@@ -21,7 +23,7 @@
         href="https://forms.gle/6nPDEWTNcaVwnQLY6" icon outlined height="35" width="35"
         color="primary"><v-icon>mdi-download</v-icon></v-btn>
     </v-app-bar>
-    <NavBar v-if="$vuetify.display.smAndDown" />
+    <!-- <NavBar v-if="$vuetify.display.smAndDown" /> -->
     <v-main>
       <slot />
     </v-main>
