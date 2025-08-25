@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/.well-known/assetlinks.json",
+      "destination": "/assetlinks.json"
+    },
+    {
+      "source": "/apple-app-site-association",
+      "destination": "/apple-app-site-association"
+    }
+  ]
+}
