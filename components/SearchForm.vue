@@ -4,7 +4,7 @@
       <v-card
         v-if="$vuetify.display.smAndUp"
         v-bind="activatorProps"
-        class="pa-2 d-flex"
+        class="pa-2 d-none d-sm-flex"
         width="250"
         height="40"
         color="grey lighten-4"
@@ -16,7 +16,7 @@
         <v-icon>mdi-magnify</v-icon>
         <div>Search Bankroll</div>
       </v-card>
-      <v-btn v-else icon v-bind="activatorProps" variant="text">
+      <v-btn v-else class="d-flex d-sm-none" icon v-bind="activatorProps" variant="text">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
     </template>

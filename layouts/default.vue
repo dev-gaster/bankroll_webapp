@@ -1,6 +1,26 @@
 <template>
   <v-app>
+    <!-- navigation drawer only on small devices -->
+    <v-navigation-drawer v-model="drawer" class="d-flex d-sm-none" temporary>
+      <v-list>
+        <v-list-item to="/faq">
+          <v-list-item-title>FAQ</v-list-item-title>
+        </v-list-item>
+        <v-list-item to="/campaigns">
+          <v-list-item-title>Campaigns</v-list-item-title>
+        </v-list-item>
+        <!-- <v-list-item to="/features">
+          <v-list-item-title>Features</v-list-item-title>
+        </v-list-item> -->
+        <v-list-item to="/resources">
+          <v-list-item-title>Resources</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
     <v-app-bar color="transparent" flat>
+      <v-btn icon variant="text" class="d-flex d-sm-none" @click="drawer = !drawer">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
       <div class="d-none d-sm-flex">
         <v-btn variant="text" rounded class="font-weight-medium" to="/faq"> FAQ</v-btn>
         <v-btn variant="text" rounded class="font-weight-medium" to="/campaigns">
@@ -68,6 +88,7 @@
 </template>
 <script setup lang="ts">
 const route = useRoute();
+const drawer = ref(false);
 </script>
 <style lang="css">
 @media (max-width: 600px) {
