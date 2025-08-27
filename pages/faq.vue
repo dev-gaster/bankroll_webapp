@@ -12,6 +12,8 @@
           background-color: #f5f5f5;
           border-radius: 10px;
           margin-bottom: 24px;
+          padding: 24px;
+          text-align: center;
         "
       >
         <h1 class="text-h4 mb-4">Frequently Asked Questions (FAQ)</h1>
@@ -20,18 +22,25 @@
         </div>
         <p class="text-primary">Looking for something else?</p>
         <div
-          class="d-flex mt-4 justify-space-between align-space-around"
+          class="d-flex mt-4 justify-space-between align-space-around flex-wrap"
+          :class="$vuetify.display.smAndDown ? 'flex-column align-center' : ''"
           style="gap: 12px"
         >
-          <v-btn variant="outlined" rounded>About Company</v-btn>
+          <v-btn variant="outlined" :block="$vuetify.display.mobile" rounded
+            >About Company</v-btn
+          >
           <v-btn
             variant="outlined"
             rounded
+            :class="$vuetify.display.mobile ? 'my-2' : ''"
+            :block="$vuetify.display.mobile"
             href="mailto:info@bankroll.cash"
             target="_blank"
             >Contact Support</v-btn
           >
-          <v-btn variant="outlined" rounded>Visit Help Center</v-btn>
+          <v-btn variant="outlined" :block="$vuetify.display.mobile" rounded
+            >Visit Help Center</v-btn
+          >
         </div>
       </div>
       <v-expansion-panels flat>
