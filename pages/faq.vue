@@ -1,10 +1,10 @@
 <template>
   <v-container>
-    <v-card flat class="mx-auto pa-4" max-width="800">
+    <v-card flat class="mx-auto" max-width="800">
       <div
         class="text-center"
         style="
-          height: 200px;
+          min-height: 200px;
           display: flex;
           flex-direction: column;
           justify-content: center;
