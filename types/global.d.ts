@@ -8,18 +8,20 @@ declare global {
         updated_at :string
         goal_amount: string
         end_date?:string|undefined
-    },
+        campaignId:string
+    };
     interface UserType {
-    __typename:String,
-    uid: String;
-    name: String;
-    username?: String |null;
-    image:String;
-    bio:String;
+    __typename:string,
+    uid: string;
+    name: string;
+    username?: string |null;
+    avatar:string;
+    bio:string;
     isActive:boolean;
     isAdmin:boolean;
     isStaff:boolean;
     isSuperuser:boolean
     emailVerified:boolean
+    campaigns: CampaignType[] |null
 }
 }
