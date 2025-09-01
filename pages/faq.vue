@@ -26,19 +26,19 @@
           :class="$vuetify.display.smAndDown ? 'flex-column align-center' : ''"
           style="gap: 12px"
         >
-          <v-btn variant="outlined" :block="$vuetify.display.mobile" rounded
+          <v-btn variant="outlined" :block="$vuetify.display.smAndDown" rounded
             >About Company</v-btn
           >
           <v-btn
             variant="outlined"
             rounded
-            :class="$vuetify.display.mobile ? 'my-2' : ''"
-            :block="$vuetify.display.mobile"
+            :class="$vuetify.display.smAndDown ? 'my-2' : ''"
+            :block="$vuetify.display.smAndDown"
             href="mailto:info@bankroll.cash"
             target="_blank"
             >Contact Support</v-btn
           >
-          <v-btn variant="outlined" :block="$vuetify.display.mobile" rounded
+          <v-btn variant="outlined" :block="$vuetify.display.smAndDown" rounded
             >Visit Help Center</v-btn
           >
         </div>

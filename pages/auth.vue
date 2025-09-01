@@ -1,9 +1,7 @@
 <template>
-   
-    
     <div>
         <v-container>
-        <NuxtPage/>
+        <nuxt-page/>
 
         </v-container>
     </div>

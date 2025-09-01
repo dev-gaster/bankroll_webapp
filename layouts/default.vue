@@ -1,8 +1,16 @@
 <template>
   <v-app>
     <!-- navigation drawer only on small devices -->
-    <v-navigation-drawer v-model="drawer" class="d-flex d-sm-none" temporary>
-      <v-list>
+    <v-navigation-drawer v-model="drawer" class="d-flex d-sm-none" width="400" temporary>
+      <template #prepend>
+        <v-toolbar flat color="transparent">
+          <v-btn icon variant="text" @click="drawer = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-divider />
+      </template>
+      <v-list nav>
         <v-list-item to="/faq">
           <v-list-item-title>FAQ</v-list-item-title>
         </v-list-item>
@@ -10,14 +18,33 @@
           <v-list-item-title>Campaigns</v-list-item-title>
         </v-list-item>
         <!-- <v-list-item to="/features">
-          <v-list-item-title>Features</v-list-item-title>
-        </v-list-item> -->
+        <v-list-item-title>Features</v-list-item-title>
+      </v-list-item> -->
         <v-list-item to="/resources">
           <v-list-item-title>Resources</v-list-item-title>
         </v-list-item>
       </v-list>
+      <template #append>
+        <v-divider />
+        <div>
+          <v-btn
+            target="blank"
+            color="primary"
+            rounded
+            variant="flat"
+            class="ma-4"
+            href="https://forms.gle/6nPDEWTNcaVwnQLY6"
+          >
+            Get the App
+          </v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
-    <v-app-bar color="transparent" flat>
+    <v-app-bar
+      color="transparent"
+      flat
+      :scroll-behavior="route.path.includes('campaigns') ? 'hide' : 'none'"
+    >
       <v-btn icon variant="text" class="d-flex d-sm-none" @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
