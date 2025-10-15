@@ -1,31 +1,21 @@
 <template>
   <div>
-    <v-card
-      class="d-flex flex-column align-center justify-center mx-auto"
-      max-width="600"
-      min-height="250"
-      flat
-    >
+    <v-card class="d-flex flex-column align-center justify-center mx-auto" max-width="600" min-height="250" flat>
       <h1 class="text-h4 font-weight-bold">Find campaigns and fundraisers</h1>
       <p class="text-subtitle-1 mb-4 text-center">
         Find the perfect campaign or fundraiser to support
       </p>
       <div style="width: 80%">
-        <v-text-field
-          v-model="searchQuery"
-          placeholder="Search campaigns..."
-          prepend-inner-icon="mdi-magnify"
-          variant="outlined"
-          fill-color="grey lighten-4"
-          density="compact"
-          rounded
-          hide-details
-        />
+        <v-text-field v-model="searchQuery" type="number" placeholder="Enter campaign ID"
+          prepend-inner-icon="mdi-magnify" :loading="loading" variant="outlined" fill-color="grey lighten-4"
+          density="compact" rounded hide-details />
+        <!-- show search results -->
+        <v-btn block class="mt-5" variant="flat" height="50" color="primary">Search Campaign</v-btn>
       </div>
     </v-card>
-    <v-toolbar style="position: sticky; top: 0; z-index: 10; background: white">
+    <!-- <v-toolbar style="position: sticky; top: 0; z-index: 10; background: white">
       <v-container class="d-flex">
-        <!-- category tabs -->
+        category tabs
         <v-tabs
           v-model="tab"
           background-color="transparent"
@@ -65,7 +55,6 @@
           </v-col>
         </v-row>
       </div>
-      <!-- add some dummy content -->
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, nesciunt dolores
         provident et nihil saepe veniam repudiandae suscipit perferendis, deserunt
@@ -87,10 +76,44 @@
         provident inventore molestiae? Minima officiis eaque eius deserunt earum. Fugiat,
         quae quibusdam sit consequatur maxime blanditiis eos quidem et?
       </p>
-    </v-container>
+    </v-container> -->
   </div>
 </template>
 <script setup lang="ts">
 const searchQuery = ref("");
-const tab = ref("");
+const config = useRuntimeConfig();
+const loading = ref(false);
+// const tab = ref("");
+const searchResults = ref<CampaignType[]>([]);
+const debounce = <T extends (...args: unknown[]) => unknown>(func: T, wait: number) => {
+  let timeout: ReturnType<typeof setTimeout>;
+  return (...args: Parameters<T>): void => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+};
+// watch searchQuery and fetch search results from API
+watch(searchQuery, async (newQuery) => {
+  loading.value = true;
+  debounce(async () => {
+    loading.value = false;
+    debounce(async () => {
+      if (newQuery.length < 3) {
+        searchResults.value = [];
+        return;
+      }
+      try {
+        const response = await fetch(`${config.apiBaseUrl}/campaigns?search=${newQuery}`);
+        if (response.ok) {
+          searchResults.value = await response.json();
+        } else {
+          console.error("Error fetching search results");
+        }
+      } catch (error) {
+        console.error("Error fetching search results", error);
+      }
+      loading.value = false;
+    }, 300);
+  }, 500)();
+});
 </script>

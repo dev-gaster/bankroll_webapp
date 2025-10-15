@@ -1,9 +1,7 @@
 <template>
   <v-container>
     <v-card flat class="mx-auto" max-width="800">
-      <div
-        class="text-center"
-        style="
+      <div class="text-center" style="
           min-height: 200px;
           display: flex;
           flex-direction: column;
@@ -14,41 +12,23 @@
           margin-bottom: 24px;
           padding: 24px;
           text-align: center;
-        "
-      >
+        ">
         <h1 class="text-h4 mb-4">Frequently Asked Questions (FAQ)</h1>
         <div class="mb-4" style="font-style: italic; font-size: medium">
           Find answers to common questions about our platform and services.
         </div>
         <p class="text-primary">Looking for something else?</p>
-        <div
-          class="d-flex mt-4 justify-space-between align-space-around flex-wrap"
-          :class="$vuetify.display.smAndDown ? 'flex-column align-center' : ''"
-          style="gap: 12px"
-        >
-          <v-btn variant="outlined" :block="$vuetify.display.smAndDown" rounded
-            >About Company</v-btn
-          >
-          <v-btn
-            variant="outlined"
-            rounded
-            :class="$vuetify.display.smAndDown ? 'my-2' : ''"
-            :block="$vuetify.display.smAndDown"
-            href="mailto:info@bankroll.cash"
-            target="_blank"
-            >Contact Support</v-btn
-          >
-          <v-btn variant="outlined" :block="$vuetify.display.smAndDown" rounded
-            >Visit Help Center</v-btn
-          >
+        <div class="d-flex mt-4 justify-space-between align-space-around flex-wrap"
+          :class="$vuetify.display.smAndDown ? 'flex-column align-center' : ''" style="gap: 12px">
+          <v-btn variant="outlined" to="/about" :block="$vuetify.display.smAndDown" rounded>About Company</v-btn>
+          <v-btn variant="outlined" rounded :class="$vuetify.display.smAndDown ? 'my-2' : ''"
+            :block="$vuetify.display.smAndDown" href="mailto:info@bankroll.cash" target="_blank">Contact Support</v-btn>
+          <v-btn variant="outlined" :block="$vuetify.display.smAndDown" rounded>Visit Help Center</v-btn>
         </div>
       </div>
       <v-expansion-panels flat>
-        <v-expansion-panel
-          v-for="(item, index) in faqItems"
-          :key="index"
-          style="margin-bottom: 8px; background-color: #f9f9f9; border-radius: 8px"
-        >
+        <v-expansion-panel v-for="(item, index) in faqItems" :key="index"
+          style="margin-bottom: 8px; background-color: #f9f9f9; border-radius: 8px">
           <v-expansion-panel-title style="font-weight: 600; font-size: 18px">{{
             item.question
           }}</v-expansion-panel-title>

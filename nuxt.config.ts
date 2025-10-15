@@ -44,6 +44,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
+    '@nuxt/content',
     // '@nuxtjs/apollo',
     '@pinia/nuxt',
     '@nuxt/scripts',
