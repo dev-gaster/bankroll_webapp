@@ -1,7 +1,11 @@
 <template>
   <v-container class="py-16">
     <v-row>
-      <v-col cols="12" md="3" class="d-flex flex-column align-center align-md-start text-center text-md-start">
+      <v-col
+        cols="12"
+        md="3"
+        class="d-flex flex-column align-center align-md-start text-center text-md-start"
+      >
         <div>
           <img src="/icon-light.png" alt="Gasobu Logo" width="60" />
         </div>
@@ -10,7 +14,11 @@
           challenges.
         </p>
       </v-col>
-      <v-col cols="12" md="3" class="d-flex flex-column align-center align-md-start text-center text-md-start">
+      <v-col
+        cols="12"
+        md="3"
+        class="d-flex flex-column align-center align-md-start text-center text-md-start"
+      >
         <h3 class="mb-4 font-weight-bold">Categories</h3>
         <div v-for="(link, i) in links" :key="i" class="mb-2">
           <NuxtLink :to="link.link" class="footer-link font-size-14">
@@ -18,7 +26,11 @@
           </NuxtLink>
         </div>
       </v-col>
-      <v-col cols="12" md="3" class="d-flex flex-column align-center align-md-start text-center text-md-start">
+      <v-col
+        cols="12"
+        md="3"
+        class="d-flex flex-column align-center align-md-start text-center text-md-start"
+      >
         <h3 class="mb-4 font-weight-bold">Support</h3>
         <div v-for="(link, i) in support" :key="i" class="mb-2">
           <NuxtLink :to="link.link" class="footer-link font-size-14">
@@ -26,7 +38,11 @@
           </NuxtLink>
         </div>
       </v-col>
-      <v-col cols="12" md="3" class="d-flex flex-column align-center align-md-start text-center text-md-start">
+      <v-col
+        cols="12"
+        md="3"
+        class="d-flex flex-column align-center align-md-start text-center text-md-start"
+      >
         <h3 class="mb-4 font-weight-bold">Legal</h3>
         <div v-for="(link, i) in legal" :key="i" class="mb-2">
           <NuxtLink :to="link.link" class="footer-link font-size-14">

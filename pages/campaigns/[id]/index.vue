@@ -49,6 +49,7 @@
         </v-card>
 
         <h2>Campaign Details</h2>
+        <p>{{ campaign?.description ?? "Campaign does not exist" }}</p>
         <br />
         <div>
           <!-- <p>{{ data?.description ?? "Campaign does not exist" }}</p> -->
