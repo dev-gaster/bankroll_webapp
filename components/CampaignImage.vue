@@ -1,6 +1,8 @@
 <template>
-  <v-card class="overflow-hidden" height="400px" variant="flat" rounded="xl">
-    <v-img :src="campaign.image" cover height="400px">
+  <v-card class="overflow-hidden mx-auto" max-width="800" height="400px" variant="flat" rounded="lg">
+    <v-img :src="campaign.image ??
+      'https://res.cloudinary.com/dtj3i62m9/image/upload/v1760505176/contribute_h8kipx.jpg'
+      " cover height="400px">
       <div class="gradient-overlay" />
 
       <div class="top-overlay pa-6 pt-4">
@@ -15,7 +17,9 @@
       <div class="text-overlay">
         <h3 class="text-white responsive-heading mb-1">{{ campaign.title }}</h3>
 
-        <p class="text-white mb-2 responsive-paragraph">{{ campaign.description }}</p>
+        <p class="text-white mb-2 responsive-paragraph text-ellipsis-3-lines">
+          Organized by {{ campaign.organizer_name }}
+        </p>
 
         <v-row class="px-0" no-gutters>
           <!-- <v-col cols="6" v-if="organizer">
@@ -63,5 +67,13 @@ defineProps({
 
 .responsive-paragraph {
   font-size: clamp(0.8rem, 2vw, 1.1rem);
+}
+
+.text-ellipsis-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>
