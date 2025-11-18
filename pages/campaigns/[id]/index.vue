@@ -22,11 +22,9 @@
       <div class="hero-container">
         <!-- Background Image -->
         <div class="hero-background">
-          <img
-            src="https://res.cloudinary.com/dtj3i62m9/image/upload/v1760505176/contribute_h8kipx.jpg"
-            :alt="campaign.title"
-            class="hero-image"
-          />
+          <img :src="campaign.image ??
+            'https://res.cloudinary.com/dtj3i62m9/image/upload/v1760505176/contribute_h8kipx.jpg'
+            " :alt="campaign.title" class="hero-image" />
           <div class="hero-overlay" />
         </div>
 
@@ -42,13 +40,7 @@
                 <p class="hero-description">
                   {{ campaign.description ?? defaultDescription }}
                 </p>
-                <v-btn
-                  color="white"
-                  size="large"
-                  rounded
-                  class="hero-cta-btn"
-                  @click="scrollToDonate"
-                >
+                <v-btn color="white" size="large" rounded class="hero-cta-btn" @click="scrollToDonate">
                   Participate Now
                 </v-btn>
               </div>
@@ -64,22 +56,22 @@
                 </div>
 
                 <!-- Campaign Title in Card -->
+
                 <h2 class="card-title">
                   {{ campaign.title }}
                 </h2>
+                <!-- goal -->
+                <div class="goal-amount mb-3">
+                  Goal:
+                  <span class="goal-amount-value">
+                    {{ formatCurrency(campaign.goal_amount || "0") }}
+                  </span>
+                </div>
 
                 <!-- Progress Bar -->
                 <div class="progress-section">
-                  <v-progress-linear
-                    :model-value="
-                      campaign.percentage_raised == 0 ? 3 : calculateProgress(campaign)
-                    "
-                    height="8"
-                    rounded
-                    color="success"
-                    bg-color="grey-lighten-1"
-                    class="mb-3"
-                  />
+                  <v-progress-linear :model-value="campaign.percentage_raised == 0 ? 3 : calculateProgress(campaign)
+                    " height="8" rounded color="success" bg-color="grey-lighten-1" class="mb-3" />
 
                   <div class="amount-raised">
                     <span class="amount-text">
@@ -98,21 +90,12 @@
                 </div>
 
                 <!-- Donations Count -->
-                <v-card
-                  variant="tonal"
-                  color="primary"
-                  rounded="lg"
-                  class="donations-info d-flex align-center justify-space-between mb-4 pa-3"
-                >
+                <v-card variant="tonal" color="primary" rounded="lg"
+                  class="donations-info d-flex align-center justify-space-between mb-4 pa-3">
                   <div class="donations-count">
                     {{ formatCount(campaign.donation_count) }} donations
                   </div>
-                  <v-btn
-                    icon
-                    density="compact"
-                    variant="outlined"
-                    @click="scrollToDonations"
-                  >
+                  <v-btn icon density="compact" variant="outlined" @click="scrollToDonations">
                     <v-icon size="small">mdi-arrow-top-right</v-icon>
                   </v-btn>
                 </v-card>
@@ -120,10 +103,7 @@
                 <!-- Campaign Thumbnails -->
                 <div class="campaign-thumbnails">
                   <div class="d-flex flex-row align-center">
-                    <div
-                      style="padding: 5px; border: 1px solid grey; border-radius: 5px"
-                      class="mr-2"
-                    >
+                    <div style="padding: 5px; border: 1px solid grey; border-radius: 5px" class="mr-2">
                       <v-icon>mdi-calendar</v-icon>
                     </div>
                     <div class="d-flex flex-column">
@@ -133,10 +113,7 @@
                   </div>
                   <v-divider vertical class="mx-4" />
                   <div class="d-flex flex-row align-center">
-                    <div
-                      style="padding: 5px; border: 1px solid grey; border-radius: 5px"
-                      class="mr-2"
-                    >
+                    <div style="padding: 5px; border: 1px solid grey; border-radius: 5px" class="mr-2">
                       <v-icon>mdi-account-multiple</v-icon>
                     </div>
                     <div class="d-flex flex-column">
@@ -170,13 +147,15 @@
             <v-card-title class="text-h6 font-weight-bold">Organizer</v-card-title>
             <v-card-text>
               <div class="d-flex align-center">
-                <v-avatar size="48" color="primary" class="mr-3">
-                  <span class="text-white text-h6">
+                <v-avatar size="48" color="primary" :image="campaign.author_avatar" class="mr-3">
+                  <span v-if="!campaign.author_avatar" class="text-white text-h6">
                     {{ campaign.organizer_name?.charAt(0).toUpperCase() }}
                   </span>
                 </v-avatar>
                 <div>
-                  <div class="font-weight-bold">{{ campaign.organizer_name }}</div>
+                  <div class="font-weight-bold" style="font-size: 16px">
+                    {{ campaign.organizer_name }}
+                  </div>
                   <div class="text-caption text-grey">Campaign Organizer</div>
                 </div>
               </div>
@@ -189,7 +168,7 @@
           <!-- Donate Card -->
           <v-card class="donate-sidebar-card mb-4" variant="flat" rounded="xl">
             <v-card-text>
-              <div class="text-h5 font-weight-bold mb-2">
+              <div class="text-h5 font-weight-bold">
                 {{
                   formatCurrency(
                     (
@@ -199,44 +178,25 @@
                   )
                 }}
               </div>
-              <div class="text-caption text-grey mb-3">
+              <div class="text-grey mb-3">
                 Goal {{ formatCurrency(campaign.goal_amount || "0") }}
               </div>
 
-              <v-progress-linear
-                :model-value="calculateProgress(campaign)"
-                height="6"
-                rounded
-                color="success"
-                bg-color="grey-lighten-3"
-                class="mb-4"
-              />
+              <v-progress-linear :model-value="calculateProgress(campaign)" height="6" rounded color="success"
+                bg-color="grey-lighten-3" class="mb-4" />
 
               <div class="mb-4">
                 <div class="font-weight-bold">
                   {{ formatCount(campaign.donation_count) }}
                 </div>
-                <div class="text-caption text-grey">donations</div>
+                <div class="text-grey">donations</div>
               </div>
 
-              <v-btn
-                color="primary"
-                size="large"
-                variant="flat"
-                block
-                rounded="lg"
-                class="mb-2"
-              >
+              <v-btn color="primary" size="large" variant="flat" block rounded="lg" class="mb-2">
                 Donate Now
               </v-btn>
 
-              <v-btn
-                variant="outlined"
-                size="large"
-                block
-                rounded="lg"
-                @click="shareCampaign"
-              >
+              <v-btn variant="outlined" size="large" block rounded="lg" @click="shareCampaign">
                 Share Campaign
               </v-btn>
             </v-card-text>
@@ -348,7 +308,7 @@ const formatCurrency = (amount: string) => {
   const numAmount = parseFloat(amount || "0");
   return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "UGX",
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(numAmount);
@@ -413,11 +373,9 @@ useSeoMeta({
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(102, 126, 234, 0.85) 0%,
-      rgba(118, 75, 162, 0.75) 100%
-    );
+    background: linear-gradient(135deg,
+        rgba(102, 126, 234, 0.85) 0%,
+        rgba(118, 75, 162, 0.75) 100%);
   }
 }
 
@@ -566,6 +524,7 @@ useSeoMeta({
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
@@ -580,7 +539,7 @@ useSeoMeta({
   font-size: 24px;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 1.4;
 }
 

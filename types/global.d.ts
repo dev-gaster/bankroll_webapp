@@ -13,6 +13,7 @@ declare global {
         percentage_raised: number | 0
         member_count: number | 0
         donation_count: number | 0
+        author_avatar?: string|undefined
 
 
     };
