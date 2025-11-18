@@ -60,8 +60,8 @@
         Get the App
       </v-btn>
       <v-btn v-if="$vuetify.display.mobile" class="d-flex d-sm-none" target="blank"
-        href="https://forms.gle/6nPDEWTNcaVwnQLY6" icon outlined height="35" width="35"
-        color="primary"><v-icon>mdi-download</v-icon></v-btn>
+        href="https://play.google.com/apps/testing/com.gasobu.fintech_apps.bankroll" icon outlined height="35"
+        width="35" color="primary"><v-icon>mdi-download</v-icon></v-btn>
     </v-app-bar>
     <!-- <NavBar v-if="$vuetify.display.smAndDown" /> -->
     <v-main>
