@@ -1,20 +1,60 @@
 <template>
   <v-app>
-    <v-app-bar color="transparent" flat>
+    <!-- navigation drawer only on small devices -->
+    <v-navigation-drawer v-model="drawer" class="d-flex d-sm-none" width="400" temporary>
       <template #prepend>
-        <v-toolbar color="transparent" flat>
-          <NuxtLink to="/">
-            <v-img src="/bankroll-logo.png" alt="Company Logo" :width="$vuetify.display.mobile ? '100' : '150'" cover />
-          </NuxtLink>
+        <v-toolbar flat color="transparent">
+          <v-btn icon variant="text" @click="drawer = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
         </v-toolbar>
+        <v-divider />
       </template>
-      <v-spacer />
+      <v-list nav>
+        <v-list-item to="/faq">
+          <v-list-item-title>FAQ</v-list-item-title>
+        </v-list-item>
+        <v-list-item to="/campaigns">
+          <v-list-item-title>Campaigns</v-list-item-title>
+        </v-list-item>
+        <!-- <v-list-item to="/features">
+        <v-list-item-title>Features</v-list-item-title>
+      </v-list-item> -->
+        <v-list-item to="/resources">
+          <v-list-item-title>Resources</v-list-item-title>
+        </v-list-item>
+      </v-list>
+      <template #append>
+        <v-divider />
+        <div>
+          <v-btn target="blank" color="primary" rounded variant="flat" class="ma-4"
+            href="https://forms.gle/6nPDEWTNcaVwnQLY6">
+            Get the App
+          </v-btn>
+        </div>
+      </template>
+    </v-navigation-drawer>
+    <v-app-bar color="transparent" flat :scroll-behavior="route.path.includes('campaigns') ? 'hide' : 'none'">
+      <v-btn icon variant="text" class="d-flex d-sm-none" @click="drawer = !drawer">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
       <div class="d-none d-sm-flex">
-        <v-btn variant="text" class="font-weight-medium" to="/campaigns"> Campaign</v-btn>
-        <v-btn variant="text" class="font-weight-medium" to="/features"> Features</v-btn>
-        <v-btn variant="text" class="font-weight-medium" to="/contact"> Contact Us</v-btn>
+        <v-btn variant="text" rounded class="font-weight-medium" to="/faq"> FAQ</v-btn>
+        <v-btn variant="text" rounded class="font-weight-medium" to="/campaigns">
+          Campaign</v-btn>
+        <!-- <v-btn variant="text" class="font-weight-medium" to="/features"> Features</v-btn> -->
+        <v-btn variant="text" rounded class="font-weight-medium"> Resources</v-btn>
       </div>
       <v-spacer />
+      <NuxtLink to="/">
+        <v-img src="/bankroll-logo.png" alt="Company Logo" :width="$vuetify.display.mobile ? '100' : '150'" cover />
+      </NuxtLink>
+
+      <v-spacer />
+
+      <!-- <div class="mr-3">
+        <search-form />
+      </div> -->
       <v-btn height="40" rounded class="font-weight-medium d-none d-md-flex" style="font-size: 16px" color="primary"
         variant="flat" depressed target="blank" href="https://forms.gle/6nPDEWTNcaVwnQLY6">
         Get the App
@@ -38,6 +78,7 @@
 </template>
 <script setup lang="ts">
 const route = useRoute();
+const drawer = ref(false);
 </script>
 <style lang="css">
 @media (max-width: 600px) {

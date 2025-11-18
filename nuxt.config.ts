@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     },
   app: {
     head: {
-      title: "Bankroll: 1# Digital platform that enables you to support (a person, organization, or project) financially.",
+      title: "Bankroll: The #1 Digital platform that enables you to support (a person, organization, or project) financially.",
       titleTemplate: "%s | Bankroll.cash",
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -44,6 +44,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
+    '@nuxt/content',
     // '@nuxtjs/apollo',
     '@pinia/nuxt',
     '@nuxt/scripts',
