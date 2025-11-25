@@ -37,7 +37,14 @@
                 <h1 class="hero-title">
                   {{ campaign.title }}
                 </h1>
-                <p class="hero-description">
+                <p class="hero-description" style="
+                    display: -webkit-box;
+                    line-clamp: 3;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  ">
                   {{ campaign.description ?? defaultDescription }}
                 </p>
                 <v-btn color="white" size="large" rounded class="hero-cta-btn" @click="scrollToDonate">
