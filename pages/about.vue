@@ -10,14 +10,11 @@
                             <span>Empowering Communities</span>
                         </div>
                         <h1 class="hero-title">
-                            Bringing People Together Through
-                            <span class="gradient-text">Meaningful Support</span>
+                            Empowering Communities Through
+                            <span class="gradient-text">Meaningful Fundraising</span>
                         </h1>
                         <p class="hero-description">
-                            Bankroll is more than just a fundraising platform. We're a community-driven
-                            solution that connects hearts, builds bridges between families and friends,
-                            and transforms how people support each other through life's most important
-                            moments.
+                            A modern platform connecting communities to support what matters most.
                         </p>
                         <div class="hero-stats">
                             <div class="stat-item">
@@ -59,11 +56,8 @@
         <section class="mission-section">
             <v-container>
                 <div class="section-header">
-                    <h2 class="section-title">Our Mission & Vision</h2>
-                    <p class="section-subtitle">
-                        Building a world where everyone has access to community support when they need
-                        it most
-                    </p>
+                    <h2 class="section-title">Our Purpose</h2>
+                    <p class="section-subtitle">Connecting communities to support each other</p>
                 </div>
                 <v-row class="mission-content">
                     <v-col cols="12" md="6">
@@ -71,11 +65,10 @@
                             <div class="card-icon-container">
                                 <v-icon class="card-icon">mdi-target</v-icon>
                             </div>
-                            <h3>Our Mission</h3>
+                            <h3>Mission</h3>
                             <p>
-                                To democratize fundraising and make it accessible for everyone to create,
-                                manage, and contribute to meaningful causes. We believe that when
-                                communities come together, extraordinary things happen.
+                                Make fundraising accessible for everyone to create, manage, and contribute
+                                to meaningful causes.
                             </p>
                         </div>
                     </v-col>
@@ -84,12 +77,10 @@
                             <div class="card-icon-container">
                                 <v-icon class="card-icon">mdi-eye</v-icon>
                             </div>
-                            <h3>Our Vision</h3>
+                            <h3>Vision</h3>
                             <p>
-                                A world where geographical boundaries don't limit compassion, where
-                                technology bridges gaps between hearts, and where every person has a
-                                supportive community ready to help during life's challenges and
-                                celebrations.
+                                A world where technology bridges hearts and every person has a supportive
+                                community ready to help.
                             </p>
                         </div>
                     </v-col>
@@ -101,10 +92,7 @@
         <section class="story-section">
             <v-container>
                 <div class="section-header">
-                    <h2 class="section-title">Our Story</h2>
-                    <p class="section-subtitle">
-                        Born from a simple idea: technology should bring people closer together
-                    </p>
+                    <h2 class="section-title">Our Journey</h2>
                 </div>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -112,12 +100,10 @@
                             <v-icon>mdi-lightbulb</v-icon>
                         </div>
                         <div class="timeline-content">
-                            <h4>The Idea (2023)</h4>
+                            <h4>2023</h4>
                             <p>
-                                Founded by the team at Gasobu Technologies, Bankroll was born from
-                                witnessing countless families struggling to organize support during
-                                medical emergencies and life events. We saw the need for a platform that
-                                could seamlessly connect communities.
+                                Founded by Gasobu Technologies to help communities organize support during
+                                critical moments.
                             </p>
                         </div>
                     </div>
@@ -126,12 +112,9 @@
                             <v-icon>mdi-rocket-launch</v-icon>
                         </div>
                         <div class="timeline-content">
-                            <h4>Launch & Growth (2024)</h4>
+                            <h4>2024</h4>
                             <p>
-                                Launched our first version with core fundraising features. Within months,
-                                we saw incredible adoption as communities across Africa began using
-                                Bankroll to support each other through medical bills, education costs, and
-                                emergencies.
+                                Launched with core features, seeing rapid adoption across communities.
                             </p>
                         </div>
                     </div>
@@ -140,25 +123,9 @@
                             <v-icon>mdi-account-group</v-icon>
                         </div>
                         <div class="timeline-content">
-                            <h4>Community Features (2025)</h4>
+                            <h4>2025</h4>
                             <p>
-                                Added powerful community features, enabling users to create support
-                                groups, collaborate on campaigns, and build lasting networks of mutual
-                                aid. Our platform evolved into a true community ecosystem.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <v-icon>mdi-earth</v-icon>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>Global Impact (Today)</h4>
-                            <p>
-                                Today, Bankroll serves thousands of users across multiple countries,
-                                facilitating millions in community support. We continue to innovate,
-                                adding features that make fundraising more effective and communities
-                                stronger.
+                                Evolved into a complete community ecosystem with collaborative features.
                             </p>
                         </div>
                     </div>
@@ -170,10 +137,7 @@
         <section class="features-section">
             <v-container>
                 <div class="section-header">
-                    <h2 class="section-title">Why Choose Bankroll?</h2>
-                    <p class="section-subtitle">
-                        Designed with communities in mind, built with cutting-edge technology
-                    </p>
+                    <h2 class="section-title">Why Bankroll</h2>
                 </div>
                 <v-row>
                     <v-col v-for="feature in features" :key="feature.title" cols="12" md="4">
@@ -193,8 +157,7 @@
         <section class="values-section">
             <v-container>
                 <div class="section-header">
-                    <h2 class="section-title">Our Core Values</h2>
-                    <p class="section-subtitle">The principles that guide everything we do</p>
+                    <h2 class="section-title">Our Values</h2>
                 </div>
                 <v-row>
                     <v-col v-for="value in values" :key="value.title" cols="12" md="6" lg="3">
@@ -214,37 +177,33 @@
         <section class="impact-section">
             <v-container>
                 <div class="section-header">
-                    <h2 class="section-title">Our Impact</h2>
-                    <p class="section-subtitle">
-                        Real stories, real change, real community support
-                    </p>
+                    <h2 class="section-title">Impact</h2>
                 </div>
                 <v-row>
                     <v-col cols="12" md="4">
                         <div class="impact-card">
                             <div class="impact-number">98%</div>
                             <h4>Success Rate</h4>
-                            <p>Of campaigns reach their funding goals through our platform</p>
+                            <p>Campaigns reach their goals</p>
                         </div>
                     </v-col>
                     <v-col cols="12" md="4">
                         <div class="impact-card">
                             <div class="impact-number">24h</div>
-                            <h4>Average Response</h4>
-                            <p>Time for emergency campaigns to receive their first donations</p>
+                            <h4>Fast Response</h4>
+                            <p>Average time to first donation</p>
                         </div>
                     </v-col>
                     <v-col cols="12" md="4">
                         <div class="impact-card">
                             <div class="impact-number">150+</div>
                             <h4>Communities</h4>
-                            <p>Active communities supporting members across different causes</p>
+                            <p>Active support networks</p>
                         </div>
                     </v-col>
                 </v-row>
 
                 <div class="testimonial-section">
-                    <h3>What Our Users Say</h3>
                     <v-row>
                         <v-col v-for="testimonial in testimonials" :key="testimonial.name" cols="12" md="4">
                             <div class="testimonial-card">
@@ -273,10 +232,7 @@
             <v-container>
                 <div class="cta-content">
                     <h2>Ready to Make a Difference?</h2>
-                    <p>
-                        Join thousands of users who are already building stronger communities through
-                        Bankroll. Start your campaign today or support others in their journey.
-                    </p>
+                    <p>Join thousands building stronger communities through Bankroll.</p>
                     <div class="cta-buttons">
                         <v-btn color="primary" size="large" class="cta-button primary" to="/new/campaign">
                             Start a Campaign
@@ -310,38 +266,32 @@ const features = ref([
     {
         icon: "mdi-shield-check",
         title: "Secure & Trusted",
-        description:
-            "Bank-level security with transparent fund tracking and verified campaign creators.",
+        description: "Bank-level security with transparent fund tracking.",
     },
     {
         icon: "mdi-devices",
-        title: "Mobile-First Design",
-        description:
-            "Seamlessly create and manage campaigns from any device, anywhere, anytime.",
+        title: "Mobile-First",
+        description: "Create and manage campaigns from any device, anywhere.",
     },
     {
         icon: "mdi-account-group",
         title: "Community Driven",
-        description:
-            "Build supportive communities around causes, creating lasting networks of mutual aid.",
+        description: "Build supportive communities around causes.",
     },
     {
         icon: "mdi-chart-line",
         title: "Real-Time Analytics",
-        description:
-            "Track campaign performance with detailed insights and donor engagement metrics.",
+        description: "Track performance with detailed insights.",
     },
     {
         icon: "mdi-share-variant",
         title: "Social Integration",
-        description:
-            "Powerful social sharing tools to amplify your campaign across all major platforms.",
+        description: "Amplify your campaign across all platforms.",
     },
     {
         icon: "mdi-cash-fast",
         title: "Quick Payouts",
-        description:
-            "Fast and reliable fund transfers with multiple payout options for your convenience.",
+        description: "Fast and reliable fund transfers.",
     },
 ]);
 
@@ -350,26 +300,22 @@ const values = ref([
     {
         icon: "mdi-heart",
         title: "Compassion",
-        description:
-            "We believe in the power of human kindness and design our platform to amplify empathy.",
+        description: "Amplifying empathy through thoughtful design.",
     },
     {
         icon: "mdi-shield-account",
         title: "Transparency",
-        description:
-            "Every transaction, every fee, every process is transparent and clearly communicated.",
+        description: "Clear communication at every step.",
     },
     {
         icon: "mdi-handshake",
         title: "Community",
-        description:
-            "We foster genuine connections and long-term relationships, not just transactions.",
+        description: "Building genuine connections, not just transactions.",
     },
     {
         icon: "mdi-lightbulb-on",
         title: "Innovation",
-        description:
-            "We continuously evolve our platform to better serve our users and communities.",
+        description: "Continuously evolving to serve you better.",
     },
 ]);
 
@@ -377,21 +323,21 @@ const values = ref([
 const testimonials = ref([
     {
         name: "Sarah Kimani",
-        role: "Medical Campaign Creator",
+        role: "Campaign Creator",
         content:
-            "Bankroll helped us raise funds for my daughter's surgery in just 3 days. The community support was overwhelming and beautiful.",
+            "Raised funds for my daughter's surgery in just 3 days. The community support was incredible.",
     },
     {
         name: "David Ochieng",
         role: "Community Leader",
         content:
-            "Our local community uses Bankroll for everything from school projects to emergency support. It's become our digital village square.",
+            "Our community uses Bankroll for everything from school projects to emergency support.",
     },
     {
         name: "Grace Mutindi",
         role: "Education Advocate",
         content:
-            "The platform made it so easy to coordinate scholarship funds for students in our area. The transparency features give donors confidence.",
+            "Made coordinating scholarship funds effortless. Transparency features build donor confidence.",
     },
 ]);
 </script>
@@ -566,64 +512,78 @@ const testimonials = ref([
 
 // Common Section Styles
 section {
-    padding: 80px 0;
+    padding: 100px 0;
+
+    @media (max-width: 960px) {
+        padding: 60px 0;
+    }
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+
+    @media (max-width: 960px) {
+        margin-bottom: 50px;
+    }
 }
 
 .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 16px;
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: -0.5px;
 }
 
 .section-subtitle {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 1.1rem;
+    color: #64748b;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: 400;
 }
 
 // Mission Section
 .mission-section {
-    background: #f8fafc;
+    background: #fafbfc;
 }
 
 .mission-content {
-    margin-top: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .mission-card {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 50px 40px;
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     height: 100%;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+
+    @media (max-width: 600px) {
+        padding: 35px 25px;
+    }
 
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
     }
 
     .card-icon-container {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         background: linear-gradient(135deg, #667eea, #764ba2);
-        border-radius: 50%;
+        border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 24px;
+        margin-bottom: 28px;
 
         .card-icon {
             color: white;
@@ -632,26 +592,29 @@ section {
     }
 
     h3 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 16px;
-        color: #2d3748;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #1e293b;
+        letter-spacing: -0.3px;
     }
 
     p {
-        color: #4a5568;
-        line-height: 1.6;
+        color: #64748b;
+        line-height: 1.75;
+        font-size: 1.05rem;
+        margin: 0;
     }
 }
 
 // Story Section
 .story-section {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
 .timeline {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
 
@@ -662,29 +625,43 @@ section {
         top: 0;
         bottom: 0;
         width: 2px;
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.2);
         transform: translateX(-50%);
+
+        @media (max-width: 768px) {
+            left: 30px;
+        }
     }
 }
 
 .timeline-item {
     display: flex;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     position: relative;
+
+    @media (max-width: 768px) {
+        margin-bottom: 40px;
+    }
 
     &:nth-child(even) {
         flex-direction: row-reverse;
 
         .timeline-content {
             text-align: right;
-            margin-right: 60px;
+            margin-right: 80px;
             margin-left: 0;
+
+            @media (max-width: 768px) {
+                text-align: left;
+                margin-right: 0;
+                margin-left: 80px;
+            }
         }
     }
 
     &:nth-child(odd) {
         .timeline-content {
-            margin-left: 60px;
+            margin-left: 80px;
         }
     }
 }
@@ -692,7 +669,7 @@ section {
 .timeline-marker {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -701,30 +678,56 @@ section {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+
+    @media (max-width: 768px) {
+        left: 30px;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+    }
 
     .v-icon {
         color: white;
         font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+        }
     }
 }
 
 .timeline-content {
     flex: 1;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 35px 30px;
+    border-radius: 20px;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+        padding: 25px 20px;
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-3px);
+    }
 
     h4 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         font-weight: 600;
         margin-bottom: 12px;
         color: #4ecdc4;
+        letter-spacing: -0.3px;
     }
 
     p {
-        line-height: 1.6;
-        opacity: 0.9;
+        line-height: 1.7;
+        opacity: 0.95;
+        font-size: 1.05rem;
+        margin: 0;
     }
 }
 
@@ -735,19 +738,25 @@ section {
 
 .feature-card {
     text-align: center;
-    padding: 40px 20px;
-    border-radius: 16px;
-    transition: transform 0.3s ease;
+    padding: 45px 30px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    height: 100%;
+    background: #fafbfc;
+    border: 1px solid transparent;
 
     &:hover {
-        transform: translateY(-5px);
+        transform: translateY(-8px);
+        background: white;
+        border-color: rgba(102, 126, 234, 0.1);
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.12);
     }
 
     .feature-icon {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         background: linear-gradient(135deg, #667eea, #764ba2);
-        border-radius: 50%;
+        border-radius: 18px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -755,47 +764,50 @@ section {
 
         .v-icon {
             color: white;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
     }
 
     h4 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         font-weight: 600;
-        margin-bottom: 16px;
-        color: #2d3748;
+        margin-bottom: 14px;
+        color: #1e293b;
+        letter-spacing: -0.2px;
     }
 
     p {
-        color: #4a5568;
+        color: #64748b;
         line-height: 1.6;
+        font-size: 0.98rem;
+        margin: 0;
     }
 }
 
 // Values Section
 .values-section {
-    background: #f8fafc;
+    background: #fafbfc;
 }
 
 .value-card {
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 25px;
     background: white;
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        transform: translateY(-6px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     }
 
     .value-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        background: linear-gradient(135deg, #4ecdc4, #44a08d);
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -811,13 +823,15 @@ section {
         font-size: 1.2rem;
         font-weight: 600;
         margin-bottom: 12px;
-        color: #2d3748;
+        color: #1e293b;
+        letter-spacing: -0.2px;
     }
 
     p {
-        color: #4a5568;
-        line-height: 1.5;
-        font-size: 0.9rem;
+        color: #64748b;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin: 0;
     }
 }
 
@@ -829,24 +843,32 @@ section {
 
 .impact-card {
     text-align: center;
-    padding: 40px 20px;
+    padding: 45px 25px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     .impact-number {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: 700;
         color: #4ecdc4;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
+        letter-spacing: -1px;
     }
 
     h4 {
         font-size: 1.3rem;
         font-weight: 600;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
+        opacity: 0.95;
     }
 
     p {
-        opacity: 0.9;
-        line-height: 1.6;
+        opacity: 0.85;
+        line-height: 1.5;
+        font-size: 0.98rem;
     }
 }
 
@@ -856,30 +878,40 @@ section {
     h3 {
         text-align: center;
         font-size: 2rem;
+        margin-bottom: 50px;
         font-weight: 600;
-        margin-bottom: 40px;
+        opacity: 0.95;
     }
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 35px 30px;
+    border-radius: 20px;
     height: 100%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-5px);
+    }
 
     .testimonial-content {
-        margin-bottom: 24px;
+        margin-bottom: 28px;
 
         .quote-icon {
-            font-size: 2rem;
             color: #4ecdc4;
-            margin-bottom: 16px;
+            font-size: 2.5rem;
+            opacity: 0.4;
+            margin-bottom: 15px;
         }
 
         p {
-            font-style: italic;
-            line-height: 1.6;
+            line-height: 1.75;
+            font-size: 1.05rem;
+            opacity: 0.95;
             margin: 0;
         }
     }
@@ -887,32 +919,36 @@ section {
     .testimonial-author {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 15px;
 
         .author-avatar {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
 
             .v-icon {
-                color: #4ecdc4;
+                color: white;
+                font-size: 1.3rem;
             }
         }
 
         .author-info {
+            text-align: left;
+
             h5 {
+                font-size: 1.1rem;
                 font-weight: 600;
-                margin: 0;
-                font-size: 1rem;
+                margin-bottom: 4px;
+                color: white;
             }
 
             span {
-                opacity: 0.8;
                 font-size: 0.9rem;
+                opacity: 0.75;
             }
         }
     }
@@ -920,35 +956,37 @@ section {
 
 // CTA Section
 .cta-section {
-    background: #1a202c;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     color: white;
     text-align: center;
 
     .cta-content {
-        max-width: 600px;
+        max-width: 700px;
         margin: 0 auto;
 
         h2 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.75rem);
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #4ecdc4, #ff6b6b);
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.5px;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.6;
             margin-bottom: 40px;
             opacity: 0.9;
+            color: #e2e8f0;
         }
     }
 
     .cta-buttons {
         display: flex;
-        gap: 20px;
+        gap: 16px;
         justify-content: center;
         flex-wrap: wrap;
     }

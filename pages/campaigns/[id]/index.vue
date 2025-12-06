@@ -145,7 +145,9 @@
           <v-card flat class="mb-4">
             <v-card-title class="text-h5 font-weight-bold">Campaign Story</v-card-title>
             <v-card-text>
-              <div class="campaign-story">{{ campaign.description }}</div>
+              <div class="campaign-story" style="font-size: clamp(14px, 1rem, 18px); line-height: 1.8">
+                {{ campaign.description }}
+              </div>
             </v-card-text>
           </v-card>
 
