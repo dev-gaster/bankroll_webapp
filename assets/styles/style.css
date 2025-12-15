@@ -30,6 +30,7 @@ body {
     padding: 0 100px !important;
     /* background-color: #ffffff !important; */
     backdrop-filter: blur(10px) !important;
+    border-bottom: 0.2px solid #e0e0e0 !important;
  }
 
 @media (min-width: 1280px) {
