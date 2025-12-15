@@ -1,6 +1,6 @@
 <template>
   <section class="hero-section">
-    <v-container class="py-16">
+    <v-container class="py-8">
       <v-row align="center" class="hero-row">
         <v-col cols="12" md="6" class="hero-content">
           <!-- Trust Badge -->
@@ -11,14 +11,14 @@
 
           <!-- Main Headline -->
           <h1 class="hero-title">
-            Your money,<br>
+            Moving money,<br />
             <span class="gradient-text">simplified</span>
           </h1>
 
           <!-- Subtitle -->
           <p class="hero-subtitle">
-            One platform for fundraising, savings, payments, pay-later, invoicing,
-            and wages. Built for everyday life.
+            One platform for fundraising, savings, payments, pay-later, invoicing, and
+            wages. Built for everyday life.
           </p>
 
           <!-- Key Benefits -->
@@ -57,13 +57,20 @@
           </div>
         </v-col>
 
-        <v-col cols="12" md="6" class="hero-visual">
-          <div class="phone-mockup">
-            <v-card class="phone-card" elevation="24">
-              <v-img src="/phone-booting.jpg" alt="Bankroll App" cover class="phone-image" />
-            </v-card>
-            <!-- Floating Stats -->
-            <div class="floating-stat stat-1">
+        <v-col cols="12" md="6">
+          <!-- <div class="phone-mockup"> -->
+          <v-card height="500" color="black" style="
+              border-radius: 20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            ">
+            <div>
+              <v-img src="/phone-booting.jpg" alt="Bankroll App" cover width="250" />
+            </div>
+          </v-card>
+          <!-- Floating Stats -->
+          <!-- <div class="floating-stat stat-1">
               <div class="stat-icon">
                 <v-icon color="success">mdi-trending-up</v-icon>
               </div>
@@ -80,8 +87,8 @@
                 <div class="stat-value">100%</div>
                 <div class="stat-label">Secure</div>
               </div>
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
         </v-col>
       </v-row>
     </v-container>
