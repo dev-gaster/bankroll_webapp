@@ -8,6 +8,7 @@
           <NuxtLink to="/">
             <v-img src="/bankroll-logo.png" alt="Bankroll Logo" width="120" cover />
           </NuxtLink>
+          <v-spacer />
           <v-btn icon variant="text" @click="drawer = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
@@ -22,7 +23,7 @@
       <template #append>
         <v-divider />
         <div>
-          <v-btn target="blank" color="primary" rounded variant="flat" class="ma-4"
+          <v-btn target="blank" color="primary" variant="flat" class="ma-4"
             href="https://play.google.com/store/apps/details?id=com.gasobu.fintech_apps.bankroll&pcampaignid=web_share">
             Get the App
           </v-btn>
