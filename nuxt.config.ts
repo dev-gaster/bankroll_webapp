@@ -19,22 +19,22 @@ export default defineNuxtConfig({
     },
   app: {
     head: {
-      title: "Bankroll: The #1 Digital platform that enables you to support (a person, organization, or project) financially.",
+      title: "Bankroll: The modern money platform for everyday life. Send, spend, and manage your finances with ease.",
       titleTemplate: "%s | Bankroll.cash",
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Bankroll is a digital platform that enables you to support (a person, organization, or project) financially.' },
+        { name: 'description', content: 'From fundraising and savings to payments, pay-later, invoicing, and wages — Bankroll is your all-in-one financial hub.' },
         { name: 'keywords', content: 'Bankroll, crowdfunding, fundraising, support, donations, financial support, campaigns, projects, organizations' },
         { name: 'author', content: 'Bankroll Technologies' },
         { name: 'theme-color', content: '#ffffff' },
-        { name: 'og:title', content: 'Bankroll: 1# Digital platform that enables you to support (a person, organization, or project) financially.' },
-        { name: 'og:description', content: 'Bankroll is a digital platform that enables you to support (a person, organization, or project) financially.' },
+        { name: 'og:title', content: 'Bankroll: The modern money platform for everyday life. Send, spend, and manage your finances with ease.' },
+        { name: 'og:description', content: 'From fundraising and savings to payments, pay-later, invoicing, and wages — Bankroll is your all-in-one financial hub.' },
         { name: 'og:image', content: 'https://gasobu-bankroll-bucket.s3.eu-north-1.amazonaws.com/app-images/og-image.png' },
         { name: 'og:url', content: 'https://bankroll.cash' },
         { name: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Bankroll: 1# Digital platform that enables you to support (a person, organization, or project) financially.' },
-        { name: 'twitter:description', content: 'Bankroll is a digital platform that enables you to support (a person, organization, or project) financially.' },
+        { name: 'twitter:title', content: 'Bankroll: The modern money platform for everyday life. Send, spend, and manage your finances with ease.' },
+        { name: 'twitter:description', content: 'From fundraising and savings to payments, pay-later, invoicing, and wages — Bankroll is your all-in-one financial hub.' },
         { name: 'twitter:image', content: 'https://gasobu-bankroll-bucket.s3.eu-north-1.amazonaws.com/app-images/og-image.png' },
       ],
     }

@@ -1,12 +1,12 @@
 <template>
   <div class="feature-card" color="#f7fafd">
-    <v-card elevation="0" class="text-center" rounded="lg" color="#f7fafd">
+    <v-card elevation="0" rounded="lg" height="100%">
       <v-card-text>
+        <h2>{{ title }}</h2>
+        <p class="my-4" style="font-size: larger; color: grey">{{ description }}</p>
         <div class="avatar-wrapper my-4" :style="{ background: avatarColor }">
           <v-icon :icon="icon" size="32" color="white" />
         </div>
-        <h2 >{{ title }}</h2>
-        <p class=" my-4" style="font-size: larger; color: grey;">{{ description }}</p>
       </v-card-text>
     </v-card>
   </div>
@@ -24,19 +24,23 @@ defineProps({
       rgba(33, 105, 188, 1) 0%,
       rgba(54, 56, 187, 1) 35%,
       rgba(115, 41, 186, 1) 100%
-    )`
-  }
+    )`,
+  },
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .feature-card {
   background-color: #f7fafd;
   border-radius: 16px;
   height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  border: 1px solid #e0e0e0;
 
+  .v-card {
+    border-radius: 16px !important;
+  }
+}
 
 .feature-card:hover {
   transform: translateY(-8px);
@@ -53,5 +57,3 @@ defineProps({
   justify-content: center;
 }
 </style>
-
-
